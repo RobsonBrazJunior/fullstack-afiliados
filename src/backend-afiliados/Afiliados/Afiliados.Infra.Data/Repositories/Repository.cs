@@ -15,7 +15,7 @@ namespace Afiliados.Infra.Data.Repositories
 			DbSet = _context.Set<T>();
 		}
 
-		public T Get(int id)
+		public T Get(Guid id)
 		{
 			return DbSet.Find(id);
 		}

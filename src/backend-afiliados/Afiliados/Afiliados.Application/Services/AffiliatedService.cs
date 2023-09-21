@@ -17,7 +17,7 @@ namespace Afiliados.Application.Services
 			_unitOfWork = unitOfWork;
 		}
 
-		public AffiliatedViewModel Get(int id)
+		public AffiliatedViewModel Get(Guid id)
 		{
 			return _mapper.Map<AffiliatedViewModel>(_unitOfWork.AffiliatedRepository.Get(id));
 		}

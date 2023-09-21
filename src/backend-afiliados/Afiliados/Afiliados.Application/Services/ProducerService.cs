@@ -17,7 +17,7 @@ namespace Afiliados.Application.Services
 			_unitOfWork = unitOfWork;
 		}
 
-		public ProducerViewModel Get(int id)
+		public ProducerViewModel Get(Guid id)
 		{
 			return _mapper.Map<ProducerViewModel>(_unitOfWork.ProducerRepository.Get(id));
 		}
