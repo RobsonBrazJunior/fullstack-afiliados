@@ -22,6 +22,11 @@ namespace Afiliados.Application.Services
 			return _mapper.Map<ProducerViewModel>(_unitOfWork.ProducerRepository.Get(id));
 		}
 
+		public IEnumerable<ProducerViewModel> GetAll()
+		{
+			return _mapper.Map<IEnumerable<ProducerViewModel>>(_unitOfWork.ProducerRepository.GetAll());
+		}
+
 		public void Add(ProducerViewModel producer)
 		{
 			_unitOfWork.ProducerRepository.Add(_mapper.Map<Producer>(producer));

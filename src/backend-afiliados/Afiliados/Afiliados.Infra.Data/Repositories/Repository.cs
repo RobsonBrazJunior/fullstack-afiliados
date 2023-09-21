@@ -20,6 +20,11 @@ namespace Afiliados.Infra.Data.Repositories
 			return DbSet.Find(id);
 		}
 
+		public IEnumerable<T> GetAll()
+		{
+			return DbSet.ToList();
+		}
+
 		public void Add(T entity)
 		{
 			DbSet.Add(entity);

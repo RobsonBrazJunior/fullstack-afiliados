@@ -22,6 +22,11 @@ namespace Afiliados.Application.Services
 			return _mapper.Map<AffiliatedViewModel>(_unitOfWork.AffiliatedRepository.Get(id));
 		}
 
+		public IEnumerable<AffiliatedViewModel> GetAll()
+		{
+			return _mapper.Map<IEnumerable<AffiliatedViewModel>>(_unitOfWork.AffiliatedRepository.GetAll());
+		}
+
 		public void Add(AffiliatedViewModel affiliated)
 		{
 			_unitOfWork.AffiliatedRepository.Add(_mapper.Map<Affiliated>(affiliated));

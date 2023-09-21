@@ -21,6 +21,12 @@ namespace Afiliados.WebApi.Controllers
 			return Ok(_producerService.Get(id));
 		}
 
+		[HttpGet("getall")]
+		public ActionResult<IEnumerable<ProducerViewModel>> GetAll() 
+		{
+			return Ok(_producerService.GetAll());
+		}
+
 		[HttpPost("add")]
 		public IActionResult Add(ProducerViewModel producer)
 		{

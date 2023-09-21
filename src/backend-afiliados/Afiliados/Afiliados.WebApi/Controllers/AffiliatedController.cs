@@ -21,6 +21,12 @@ namespace Afiliados.WebApi.Controllers
 			return Ok(_affiliatedService.Get(id));
 		}
 
+		[HttpGet("getall")]
+		public ActionResult<IEnumerable<AffiliatedViewModel>> GetAll()
+		{
+			return Ok(_affiliatedService.GetAll());
+		}
+
 		[HttpPost("add")]
 		public IActionResult Add(AffiliatedViewModel affiliated)
 		{
