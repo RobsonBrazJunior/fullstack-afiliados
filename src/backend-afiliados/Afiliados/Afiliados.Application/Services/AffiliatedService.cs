@@ -33,6 +33,12 @@ namespace Afiliados.Application.Services
 			_unitOfWork.Save();
 		}
 
+		public void AddRange(IEnumerable<AffiliatedViewModel> entities)
+		{
+			_unitOfWork.AffiliatedRepository.AddRange(_mapper.Map<IEnumerable<Affiliated>>(entities));
+			_unitOfWork.Save();
+		}
+
 		public void Update(AffiliatedViewModel affiliated)
 		{
 			_unitOfWork.AffiliatedRepository.Add(_mapper.Map<Affiliated>(affiliated));

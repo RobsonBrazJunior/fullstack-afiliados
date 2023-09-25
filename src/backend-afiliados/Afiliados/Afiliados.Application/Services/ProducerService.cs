@@ -33,6 +33,12 @@ namespace Afiliados.Application.Services
 			_unitOfWork.Save();
 		}
 
+		public void AddRange(IEnumerable<ProducerViewModel> entities)
+		{
+			_unitOfWork.ProducerRepository.AddRange(_mapper.Map<IEnumerable<Producer>>(entities));
+			_unitOfWork.Save();
+		}
+
 		public void Update(ProducerViewModel producer)
 		{
 			_unitOfWork.ProducerRepository.Update(_mapper.Map<Producer>(producer));
