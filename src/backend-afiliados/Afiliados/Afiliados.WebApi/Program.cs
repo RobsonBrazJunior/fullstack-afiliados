@@ -20,8 +20,10 @@ builder.Services.AddDbContext<ApplicationContext>(options =>
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IProducerService, ProducerService>();
 builder.Services.AddScoped<IAffiliatedService, AffiliatedService>();
+builder.Services.AddScoped<ISaleService, SaleService>();
 builder.Services.AddAutoMapper(typeof(ProducerEntityToViewModelAndReverseProfile),
-							   typeof(AffiliatedEntityToViewModelAndReverseProfile));
+							   typeof(AffiliatedEntityToViewModelAndReverseProfile),
+							   typeof(SaleEntityToDtoAndRevserProfile));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
