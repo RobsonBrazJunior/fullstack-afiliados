@@ -57,6 +57,34 @@ namespace Afiliados.Infra.Data.Migrations
 					b.ToTable("Producers", (string)null);
 				});
 
+			modelBuilder.Entity("Afiliados.Domain.Entities.Sale", b =>
+				{
+					b.Property<Guid>("Id")
+						.ValueGeneratedOnAdd()
+						.HasColumnType("uniqueidentifier");
+
+					b.Property<DateTime>("Date")
+						.HasColumnType("datetime2");
+
+					b.Property<string>("Product")
+						.IsRequired()
+						.HasColumnType("VARCHAR(30)");
+
+					b.Property<string>("Seller")
+						.IsRequired()
+						.HasColumnType("VARCHAR(20)");
+
+					b.Property<byte>("Type")
+						.HasColumnType("tinyint");
+
+					b.Property<int>("Value")
+						.HasColumnType("int");
+
+					b.HasKey("Id");
+
+					b.ToTable("Sales", (string)null);
+				});
+
 			modelBuilder.Entity("Afiliados.Domain.Entities.Affiliated", b =>
 				{
 					b.HasOne("Afiliados.Domain.Entities.Producer", "Producer")
