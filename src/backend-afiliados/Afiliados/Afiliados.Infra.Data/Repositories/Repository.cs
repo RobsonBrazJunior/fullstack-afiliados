@@ -30,6 +30,11 @@ namespace Afiliados.Infra.Data.Repositories
 			DbSet.Add(entity);
 		}
 
+		public void AddRange(IEnumerable<T> entities)
+		{
+			DbSet.AddRange(entities);
+		}
+
 		public void Update(T entity)
 		{
 			DbSet.Attach(entity);

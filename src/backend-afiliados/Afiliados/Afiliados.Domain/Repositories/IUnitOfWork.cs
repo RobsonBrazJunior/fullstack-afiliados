@@ -4,6 +4,7 @@
 	{
 		IProducerRepository ProducerRepository { get; }
 		IAffiliatedRepository AffiliatedRepository { get; }
+		ISaleRepository SaleRepository { get; }
 		int Save();
 	}
 }
