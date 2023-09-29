@@ -15,8 +15,8 @@ namespace Afiliados.WebApi.Controllers
 			_saleService = saleService;
 		}
 
-		[HttpPost("uploadSale")]
-		public IActionResult UploadSale(IFormFile file)
+		[HttpPost("upload")]
+		public IActionResult Upload(IFormFile file)
 		{
 			if (file == null || file.Length == 0)
 			{
