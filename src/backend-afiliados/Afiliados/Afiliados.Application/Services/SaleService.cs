@@ -50,5 +50,31 @@ namespace Afiliados.Application.Services
 			_unitOfWork.SaleRepository.Remove(_mapper.Map<Sale>(sale));
 			_unitOfWork.Save();
 		}
+
+		public IList<SaleDTO> NormalizeStreamReaderToSaleDtoList(StreamReader reader)
+		{
+			IList<SaleDTO> sales = new List<SaleDTO>();
+
+			string? line;
+			while (!string.IsNullOrWhiteSpace(line = reader.ReadLine()))
+			{
+				var sale = new SaleDTO();
+				try
+				{
+					sale.Type = byte.Parse(line[..1]);
+					sale.Date = DateTime.Parse(line.Substring(1, 25));
+					sale.Product = line.Substring(26, 30).Trim();
+					sale.Value = int.Parse(line.Substring(56, 10));
+					sale.Seller = line[66..];
+				}
+				catch (Exception e)
+				{
+					Console.WriteLine(e);
+				}
+				sales.Add(sale);
+			}
+
+			return sales;
+		}
 	}
 }
