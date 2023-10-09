@@ -18,9 +18,9 @@ namespace Afiliados.Infra.Data.Repositories
 			_saleRepositoryy = new SaleRepository(context);
 		}
 
-		public IProducerRepository ProducerRepository { get { return _producerRepository; } }
-		public IAffiliatedRepository AffiliatedRepository { get { return _affiliatedRepository; } }
-		public ISaleRepository SaleRepository { get { return _saleRepositoryy; } }
+		public IProducerRepository ProducerRepository => _producerRepository;
+		public IAffiliatedRepository AffiliatedRepository => _affiliatedRepository;
+		public ISaleRepository SaleRepository => _saleRepositoryy;
 
 		public int Save()
 		{
